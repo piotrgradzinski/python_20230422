@@ -8,3 +8,8 @@ Sample output:
 Provide a number: 15
 Result: True
 """
+
+number = int(input('Provide a number: '))
+result = (number % 2 != 0 and number % 3 == 0 and number > 10) or number == 7
+
+print(f'Result: {result}')
