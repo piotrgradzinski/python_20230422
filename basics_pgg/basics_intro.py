@@ -89,3 +89,53 @@ print('Height: ' + str(height))
 # 3 approach - f-string, formatted string
 print(f'First name: {first_name}')
 print(f"Height: {height}")
+
+print('-' * 30)
+
+# Python is a weakly typed language
+# which means one variable can store different data types
+my_variable = 'Piotr'
+print(my_variable)
+
+my_variable = 44
+print(my_variable)
+
+print('-' * 30)
+
+# Assignment operator
+number = 10
+print(number)
+
+print('-' * 30)
+
+number = 10
+print(number)
+number = number + 1
+print(number)
+
+number = 10
+number = number + 1
+print(number)
+
+number = 10
+number += 2
+print(number)
+
+# +=, -=, *=, /=
+
+print('-' * 30)
+
+# Comparison operators
+print(1 == 1)  # True, Warning! We have to = signs, not one!
+print(1 != 1)  # False
+print(1 > 2)  # False
+print(1 < 2)  # True
+print(1 <= 1)  # True
+print(2 >= 2)  # True
+
+first_number = 10
+second_number = 20
+print(first_number < second_number)  # True
+
+# modulus operator
+print(10 % 3)  # 1
