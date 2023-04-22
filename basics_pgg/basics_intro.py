@@ -165,3 +165,5 @@ print(number > 5 and number % 2 == 0)  # True
 number = 7
 #          True  and      False        -> False
 print(number > 5 and number % 2 == 0)  # False
+
+print((number > 5 and number % 2 == 0) or number == 7)
