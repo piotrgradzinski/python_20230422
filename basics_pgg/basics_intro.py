@@ -139,3 +139,5 @@ print(first_number < second_number)  # True
 
 # modulus operator
 print(10 % 3)  # 1
+print(10 / 3)  # 3.(3)
+print(20 % 6)  # 2
