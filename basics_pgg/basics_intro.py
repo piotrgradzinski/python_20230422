@@ -141,3 +141,27 @@ print(first_number < second_number)  # True
 print(10 % 3)  # 1
 print(10 / 3)  # 3.(3)
 print(20 % 6)  # 2
+
+print('-' * 30)
+
+# Logical operators - not, and, or
+print(not True)
+print(not False)
+
+print(True and True)  # True
+print(True and False)  # False
+print(False and True)  # False
+print(False and False)  # False
+
+print(True or True)  # True
+print(True or False)  # True
+print(False or True)  # True
+print(False or False)  # False
+
+number = 10
+#        True    and         True      -> True
+print(number > 5 and number % 2 == 0)  # True
+
+number = 7
+#          True  and      False        -> False
+print(number > 5 and number % 2 == 0)  # False
