@@ -11,3 +11,21 @@ Enter the type of operation (+, -, *, /): +
 Result: 10+5=15
 """
 
+number_1 = float(input('Enter the first number: '))
+number_2 = float(input('Enter the second number: '))
+operation = input('Enter the type of operation (+, -, *, /): ')
+
+if operation == '+':
+    result = number_1 + number_2
+    print(f'Result: {number_1} {operation} {number_2} = {result}')
+elif operation == '-':
+    result = number_1 - number_2
+    print(f'Result: {number_1} {operation} {number_2} = {result}')
+elif operation == '*':
+    result = number_1 * number_2
+    print(f'Result: {number_1} {operation} {number_2} = {result}')
+elif operation == '/':
+    result = number_1 / number_2
+    print(f'Result: {number_1} {operation} {number_2} = {result}')
+else:
+    print('Operation not supported.')
