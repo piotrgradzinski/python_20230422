@@ -66,3 +66,26 @@ print(result)
 # print function accepts many argument, so we can display
 # several things at once
 print(first_number, second_number, result, result * 10)
+
+print('-' * 30)
+
+first_name = 'Piotr'
+height = 182
+
+# 1 approach
+print('First name:', first_name)  # by default arguments displayed with a print function are separated by space
+# First name: Piotr
+print('Height:', height)
+
+# 2 approach
+print('First name: ' + first_name)
+# print('First name: Piotr')
+# it's not allowed to concatenate strings with anything else than string
+# print('Height: ' + height)  # TypeError: can only concatenate str (not "int") to str
+print('Height: ' + str(height))
+# print('Height: ' + '182')
+# print('Height: 182')
+
+# 3 approach - f-string, formatted string
+print(f'First name: {first_name}')
+print(f"Height: {height}")
