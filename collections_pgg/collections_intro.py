@@ -112,3 +112,44 @@ print(my_list)
 print('How many elements we have: ', len(my_list))
 print('Max index: ', len(my_list) - 1)
 
+print('-' * 30)
+
+# How to iterate through a collection, so we can do something with each collection element.
+my_list = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+
+# 1 approach - iteration through a list with WHILE loop
+index = 0
+while index < len(my_list):
+    print(my_list[index])
+    index += 1
+
+print('-' * 30)
+
+# 2 approach - iteration through a list with FOR loop
+# For each number in my_list do the following operations:
+# number - it's a temporary variable that python will use and put single value from the list
+# then, will do the content of the for loop and once that is completed, he will take next
+# value from the list and put this value into number variable and execute the content of the for loop.
+# The name of the temporary variable in for loop is totally up to us, we can name it as we want
+for number in my_list:
+    print(number)
+
+names = ['Tom', 'Mark', 'Ann', 'Peter']
+for name in names:
+    print(name, end='---')
+
+print('after for loop')
+
+# by default printer arguments are separated by space
+# and newline character is added after the last argument
+print('Cat', 'Dog', 'Car')
+
+# you can change that by setting sep and end arguments
+print('Cat', 'Dog', 'Car', sep='|', end='---')
+print()
+print('-' * 30)
+
+# we can iterate through tuples in the same way
+my_tuple = (10, 'Piotr', True, 3.14)
+for element in my_tuple:
+    print(element)
