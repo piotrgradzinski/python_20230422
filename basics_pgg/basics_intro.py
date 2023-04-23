@@ -212,3 +212,19 @@ while True is True:
         break
 
 print('After while loop')
+
+print('-' * 30)
+
+# few elements needed for a game exercise
+
+# how we can an absolute value from a number
+print(abs(-10))  # 10
+print(abs(10))  # 10
+
+# How to get a square root of a number?
+from math import sqrt  # tells python that we want to use sqrt function from a math module
+print(sqrt(4))
+
+# How to get a random number?
+from random import randint
+print(randint(0, 10))  # each execution of the sript gives a different number between 0 and 10
