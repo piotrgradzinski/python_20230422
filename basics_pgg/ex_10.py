@@ -24,3 +24,24 @@ Provide a number or STOP: 20
 Provide a number or STOP: STOP
 Provided minimum = 3, maximum = 20
 """
+
+minimum = None
+maximum = None
+
+while True:
+    input_data = input('Provide a number or STOP: ')
+    if input_data == 'STOP':
+        break
+
+    number = float(input_data)
+
+    if minimum is None or number < minimum:
+        minimum = number
+
+    if maximum is None or number > maximum:
+        maximum = number
+
+if minimum is None or maximum is None:
+    print('You did not provided any number')
+else:
+    print(f'Provided minimum = {minimum}, maximum = {maximum}')
