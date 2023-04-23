@@ -191,6 +191,9 @@ print('-' * 30)
 # We are using them to execute several operation multiple times
 
 number = 0
+# Do the content of the loop while the condition is true.
+# Do the content of the loop as long as the condition is true.
+# and this is called while loop
 while number < 10:
     print(number)
     number += 1
@@ -200,7 +203,9 @@ print('After while loop')
 print('-' * 30)
 
 number = 0
-while True:
+# while CONDITION:
+# while True:
+while True is True:
     print(number)
     number += 1
     if number >= 10:
