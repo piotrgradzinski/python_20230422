@@ -54,7 +54,6 @@ print(my_tuple[-6:5])  # ('e',)
 print(my_tuple[3], my_tuple[7])
 print(my_tuple[1+3])  # e
 
-exit()
 # you can't modify the tuple after its creation
 # my_tuple[0] = 1000  # TypeError: 'tuple' object does not support item assignment
 
@@ -66,3 +65,50 @@ numbers_tuple = (10, 20, 30, 40, 50)
 print(min(numbers_tuple))  # 10
 print(max(numbers_tuple))  # 50
 print(sum(numbers_tuple))  # 150
+
+# List
+# index    0   1   2   3   4   5   6   7   8   9
+my_list = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+print(my_list)
+print(my_list[0])
+
+# indexing operator, indexes, work exactly the same as with tuples
+print(type(my_tuple), type(my_list))
+
+my_list[0] = 11  # replace
+print(my_list)  # [11, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+
+my_list.append(110)  # adds element at the of the list
+print(my_list)  # [11, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110]
+
+my_list.insert(1, 12)  # insert 12 on index 1, move all elements
+print(my_list)  # [11, 12, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110]
+
+my_list.extend([120, 130, 140])  # add elements from the argument to the end of the list
+print(my_list)  # [11, 12, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140]
+
+my_list[0:2] = [1, 2]
+print(my_list)  # [1, 2, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140]
+
+my_list[0:2] = [1, 2, 3]
+print(my_list)  # [1, 2, 3, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140]
+
+del my_list[0]
+print(my_list)  # [2, 3, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140]
+
+del my_list[0:2]
+print(my_list)  # [20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140]
+
+my_list.remove(140)
+print(my_list)  # [20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130]
+
+my_list = [50, 2, 15, -10]
+print(my_list)
+my_list.sort()  # .sort() changes the original list
+print(my_list)
+my_list.sort(reverse=True)
+print(my_list)
+
+print('How many elements we have: ', len(my_list))
+print('Max index: ', len(my_list) - 1)
+
