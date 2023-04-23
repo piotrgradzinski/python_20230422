@@ -227,4 +227,4 @@ print(sqrt(4))
 
 # How to get a random number?
 from random import randint
-print(randint(0, 10))  # each execution of the sript gives a different number between 0 and 10
+print(randint(0, 10))  # each execution of the script gives a different number between 0 and 10
