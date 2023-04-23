@@ -15,4 +15,12 @@ How we can do that?
   from the user
 - check the if the provided number is greater than maximum or lower than minimum
   and then properly assign new value
+
+Sample program output:
+Provide a number or STOP: 10
+Provide a number or STOP: 15
+Provide a number or STOP: 3
+Provide a number or STOP: 20
+Provide a number or STOP: STOP
+Provided minimum = 3, maximum = 20
 """
