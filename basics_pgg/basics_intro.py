@@ -183,3 +183,27 @@ elif 101 <= number <= 200:  # elif number >= 101 and number <= 200:
     print('Number in a range 101-200')
 else:
     print('Number is out of range.')
+
+
+print('-' * 30)
+
+# Loops
+# We are using them to execute several operation multiple times
+
+number = 0
+while number < 10:
+    print(number)
+    number += 1
+
+print('After while loop')
+
+print('-' * 30)
+
+number = 0
+while True:
+    print(number)
+    number += 1
+    if number >= 10:
+        break
+
+print('After while loop')
