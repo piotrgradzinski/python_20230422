@@ -168,3 +168,18 @@ print(number > 5 and number % 2 == 0)  # False
 
 print((number > 5 and number % 2 == 0) or number == 7)
 
+print('-' * 30)
+
+number = 88
+
+# if number >= 0 and number <= 100:  # we are checking if the number is in range
+if 0 <= number <= 100:
+    print('Number is in a range 0-100')
+    if number < 50:
+        print('Number is in a range 0-50')
+    else:
+        print('Number is in a range 50-100')
+elif 101 <= number <= 200:  # elif number >= 101 and number <= 200:
+    print('Number in a range 101-200')
+else:
+    print('Number is out of range.')
