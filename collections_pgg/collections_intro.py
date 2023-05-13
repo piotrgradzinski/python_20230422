@@ -186,3 +186,56 @@ print('-' * 30)
 a = 10
 b = 4
 print(f"{a*b:4}")
+
+print('-' * 30)
+
+# index: 0      1      2        3
+names = ['Tom', 'Ann', 'Piotr', 'Mary']
+# with this approach we have access to values only, not to an index
+for name in names:
+    print(name)
+
+print('-' * 10)
+
+"""
+To be able to access both index and value
+we can use enumerate function that will
+return both index and value.
+
+Enumerate for each element in a collection
+returns a tuple with number (index) and value.
+"""
+
+names = ['Tom', 'Ann', 'Piotr', 'Mary']
+for index, name in enumerate(names):
+    print(index, name)
+
+print('-' * 10)
+
+names = ['Tom', 'Ann', 'Piotr', 'Mary']
+for index, name in enumerate(names, start=10):
+    print(f"{index}. {name}")
+
+print('-' * 10)
+
+"""
+Unpacking - works with any collection
+The number of elements on both sides needs to match,
+otherwise we will have an error.
+"""
+first_name, last_name = ('Piotr', 'GG')
+print(first_name)
+print(last_name)
+
+print('-' * 10)
+
+names = ['Tom', 'Ann', 'Piotr', 'Mary']
+for index, name in enumerate(names):
+    print(index, name)
+
+print('-' * 3)
+
+# with range
+names = ['Tom', 'Ann', 'Piotr', 'Mary']
+for index in range(0, len(names)):
+    print(index, names[index])
