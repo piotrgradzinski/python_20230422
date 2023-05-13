@@ -17,6 +17,8 @@ vowels = ['a', 'e', 'y', 'u', 'i', 'o']
 counter = 0
 
 # iterate through vowels
-# use .count to calculate how many times certain vowels appears in a string
+# use .count(vowel) to calculate how many times certain vowels appears in a string
+for vowel in vowels:
+    counter += users_input.count(vowel)
 
 print(f'Within "{users_input}" we have {counter} vowels.')
