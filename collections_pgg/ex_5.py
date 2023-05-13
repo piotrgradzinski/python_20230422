@@ -33,8 +33,17 @@ simpler version:
 We will need few features of a print function:
 - print(10, end="")
 - print(f"{a*b:4}")
+- print() -> will print to the console only \n - new line
 
 Hints:
 - outer loop will be producing rows
 - inner loop will be producing columns
 """
+
+for a in range(0, 11):
+    for b in range(0, 11):
+        print(f"{a * b:4}", end='')
+    print()
+
+print()
+print('Thank you very much!')
