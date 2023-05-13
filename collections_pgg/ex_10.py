@@ -13,3 +13,20 @@ We have to solve 2 problems:
 create a set with even numbers - use for loop and range(0, 101, 2) function
 use a set intersection to show which elements provided by the user met criteria
 """
+
+numbers = set()
+
+while True:
+    number = input('Provide a number: ')
+    if number == 'end':
+        break
+    else:
+        numbers.add(int(number))
+
+print(f"Number of unique numbers: {len(numbers)}")
+
+even_numbers = set()
+for number in range(0, 101, 2):
+    even_numbers.add(number)
+
+print(f"Number of even, unique numbers between 0-100: {len(numbers.intersection(even_numbers))}")
