@@ -26,3 +26,28 @@ Approach 2
 3. Get the index of <
 4. Subtract them and subtract 1.
 """
+
+users_input = input('Provide a string: ')
+
+# checking the number of brackets
+if users_input.count('<') != 1 or users_input.count('>') != 1:
+    print('Wrong number of brackets!')
+    exit()  # stopping the execution of the program
+
+# Approach 1
+counter = 0
+should_count = False
+
+for character in users_input:
+    if character == '<':
+        should_count = True
+    elif character == '>':
+        should_count = False
+    elif should_count:
+        counter += 1
+
+print(f'{counter} characters')
+
+# Approach 2
+counter = users_input.index('>') - users_input.index('<') - 1
+print(f'{counter} characters')
