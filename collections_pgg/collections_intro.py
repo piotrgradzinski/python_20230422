@@ -408,3 +408,120 @@ print('-' * 30)
 
 print('first_name' in my_dict)
 print('address' in my_dict)
+
+print('-' * 30)
+
+"""
+Sets
+"""
+
+# empty set
+my_set = {}  # Warning! This is an empty dict! Not set!
+print(type(my_set))
+
+my_set = set()
+print(type(my_set))
+
+
+my_set = {10, 20, 30, 40, 50}
+
+print(type(my_set))
+print(my_set)  # {50, 20, 40, 10, 30}
+
+my_set.add(50)  # only unique elements
+print(my_set)  # {50, 20, 40, 10, 60, 30}
+
+my_set.add(60)
+print(my_set)  # {50, 20, 40, 10, 60, 30}
+
+my_set.remove(60)
+print(my_set)
+
+my_set.update({1, 2, 3})
+print(my_set)
+
+my_set.add('Piotr')
+my_set.add(3.14)
+my_set.add(True)
+my_set.add(None)
+my_set.add((10, 20, 30))
+# my_set.add([1, 2, 3])  # TypeError: unhashable type: 'list'
+print(my_set)
+
+print('-' * 30)
+
+for element in my_set:
+    print(element)
+
+# indexing operator will not work...
+# print(my_set[0])  # TypeError: 'set' object is not subscriptable
+
+print('-' * 30)
+
+# Set theory operations
+# https://piotr.gg/sql/sql-joins.html
+
+a = {1, 2, 3}
+b = {1, 2, 4, 5}
+
+# Union, sum
+print(a.union(b))  # {1, 2, 3, 4, 5}
+print(a | b)
+
+# Intersection
+print(a.intersection(b))  # {1, 2}
+print(a & b)
+
+# Difference, subtraction - from a subtracking b
+print(a.difference(b))  # {3}
+print(a - b)
+
+# Symmetric difference
+# from union of two sets subtract intersection
+print(a.symmetric_difference(b))  # {3, 4, 5}
+print(a ^ b)
+
+# We can test sets
+# Is disjoint? Don't have any common part (no intersection).
+print(a)  # {1, 2, 3}
+print(b)  # {1, 2, 4, 5}
+print(a.isdisjoint(b))  # False
+
+"""
+What is a subset?
+For example, {1, 2} is a subset of {1, 2, 3}, and so is {2} but {1, 4} is not.
+"""
+
+# Is A a subset of B? Sets can't be the same.
+print(a < b)  # False
+
+c = {1, 2}
+print(c < a)
+
+# Is C a subset of A? Sets CAN be the same.
+print(c <= a)
+
+print(a)  # {1, 2, 3}
+print(b)  # {1, 2, 4, 5}
+print(a < b)  # False
+print(b < a)  # False
+
+print('-' * 30)
+
+# One way of using sets is to get rid of the duplicated values
+# here we have list of names, and some names are duplicated
+names = ['Piotr', 'Tom', 'Mark', 'Tom', 'Piotr', 'Tom']
+print(names)
+
+"""
+In Python it's really simple to convert one collection
+into another. Just need to use desired collection and pass the data 
+"""
+
+# list -> set conversion
+names_set = set(names)
+print(names_set)
+
+# set -> list conversion
+names = list(names_set)
+print(names)
