@@ -18,6 +18,7 @@ counter = 0
 
 # iterate through vowels
 # use .count(vowel) to calculate how many times certain vowels appears in a string
+users_input = users_input.lower()
 for vowel in vowels:
     counter += users_input.count(vowel)
 
