@@ -173,3 +173,16 @@ print('-' * 10)
 
 for number in range(-5, 6, 2):
     print(number, end='===')
+
+print()
+print('-' * 30)
+
+# We can use nested for loops
+for a in range(1, 11):
+    for b in range(1, 11):
+        print(f'{a}+{b}={a+b}')
+
+print('-' * 30)
+a = 10
+b = 4
+print(f"{a*b:4}")
