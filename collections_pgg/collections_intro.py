@@ -239,3 +239,73 @@ print('-' * 3)
 names = ['Tom', 'Ann', 'Piotr', 'Mary']
 for index in range(0, len(names)):
     print(index, names[index])
+
+print('-' * 30)
+
+"""
+STRINGS
+We can treat them as collections of characters.
+Strings are immutable.
+"""
+
+#            0123456789...
+my_string = 'To be or not to be'
+
+# we can use indexing operator
+print(my_string[0])  # T
+print(my_string[1])  # o
+print(my_string[2])  # space
+print(my_string[1:4])  # o b
+print(my_string[-1])  # e
+print(my_string[::2])  # T eo o ob
+print(my_string[::-1])  # eb ot ton ro eb oT
+
+# we have string specific operations
+# the result of every operation is a new string
+print(my_string)  # To be or not to be
+print(my_string.lower())  # to be or not to be
+print(my_string.upper())  # TO BE OR NOT TO BE
+print(my_string.title())  # To Be Or Not To Be
+print(my_string.capitalize())  # To be or not to be
+
+sentence = 'my name is piotr. how do you do?'
+print(sentence.capitalize())  # My name is piotr. how do you do?
+
+"""
+We can split a string into chunks.
+.split() method returns a list of chunks.
+"""
+print(my_string.split())  # by default split uses spaces as a separator
+print(my_string.split(' '))
+print(my_string.split('o'))
+print(my_string.split('be'))
+
+for word in my_string.split(' '):
+    print(word)
+
+# we can join strings together as well
+
+names = ['Tom', 'Ann', 'Piotr', 'Mary']
+# take <-> as a glue that will connect string from names list and return new string
+print('<->'.join(names))  # Tom<->Ann<->Piotr<->Mary
+
+print(my_string)
+print(my_string.count('o'))  # 4
+print(len(my_string))  # 18
+print('to' in my_string)  # True
+print('Piotr' in my_string)  # False
+
+# To and to - those are two different strings!
+print(my_string.find('to'))  # 13 - returns the first index where the string we are looking for starts
+print(my_string.find('Piotr'))  # -1 - returns -1 if substring was not found
+
+print(my_string.index('to'))  # 13
+# If substring is not found then the ValueError exception is thrown.
+# print(my_string.index('Piotr'))
+
+print(my_string.replace('o', '*'))
+
+print('-' * 3)
+
+for character in my_string:
+    print(character)
