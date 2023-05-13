@@ -28,7 +28,7 @@ For example, if a user is 70 years old and will spend 10 nights at the hotel, he
 
 Write a program that will ask a user for the lengths of the sides of a triangle. Check if it's possible to create a triangle from those lengths and if so, calculate the area of the triangle. 
 
-To calculate squre root use:
+To calculate square root use:
 ```
 import math
 

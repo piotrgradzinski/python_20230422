@@ -140,7 +140,7 @@ for name in names:
 
 print('after for loop')
 
-# by default printer arguments are separated by space
+# by default print arguments are separated by space
 # and newline character is added after the last argument
 print('Cat', 'Dog', 'Car')
 
@@ -153,3 +153,23 @@ print('-' * 30)
 my_tuple = (10, 'Piotr', True, 3.14)
 for element in my_tuple:
     print(element)
+
+print('-' * 30)
+
+"""
+range(start, stop - 1, step)
+https://docs.python.org/3/library/stdtypes.html#ranges
+"""
+
+for number in range(12):  # from 0 to 11
+    print(number)
+
+print('-' * 10)
+
+for number in range(-5, 6):
+    print(number)
+
+print('-' * 10)
+
+for number in range(-5, 6, 2):
+    print(number, end='===')
