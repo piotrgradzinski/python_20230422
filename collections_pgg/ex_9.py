@@ -21,3 +21,16 @@ e = 2
 r = 1
 n = 1
 """
+occurrences = {}
+users_input = input('Provide your text: ')
+
+# count the letters
+for character in users_input.lower():
+    if character not in occurrences:
+        occurrences[character] = 0
+
+    occurrences[character] += 1
+
+# display the result
+for character, number_of_occurrences in occurrences.items():
+    print(f"{character} = {number_of_occurrences}")
