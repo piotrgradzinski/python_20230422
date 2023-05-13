@@ -11,3 +11,13 @@ What we can do with uppercase letters?
 2. We can use .lower() method.
 """
 
+users_input = input('Provide a string: ')  # To Be Or Not TO be
+
+vowels = ['a', 'e', 'y', 'u', 'i', 'o']
+counter = 0
+
+for character in users_input:
+    if character.lower() in vowels:
+        counter += 1
+
+print(f'Within "{users_input}" we have {counter} vowels.')
