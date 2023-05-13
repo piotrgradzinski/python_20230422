@@ -309,3 +309,102 @@ print('-' * 3)
 
 for character in my_string:
     print(character)
+
+print('-' * 30)
+
+"""
+Dictionary
+"""
+# key: value
+my_dict = {
+    'first_name': 'Piotr',
+    'last_name': 'GG',
+    'shoe_number': 46,
+    'works_at_ALX': True,
+    'favourite_numbers': [10, 20, 30]
+}
+
+print(my_dict)
+
+# getting elements via indexing operator
+# indexing operator to access elements
+print(my_dict['first_name'])
+print(my_dict['shoe_number'])
+print(my_dict['favourite_numbers'])
+# print(my_dict['height'])  # KeyError: 'height'
+
+# setting/adding elements
+my_dict['first_name'] = 'Mark'
+print(my_dict)
+my_dict['weight'] = 90
+print(my_dict)
+
+# getting elements via .get() method
+print(my_dict.get('first_name'))
+"""
+For keys that are not present in a dictionary get will return None 
+instead of raising a KeyError exception as indexing operator does
+"""
+print(my_dict.get('height'))
+
+# with .get() method we can define default value to be returned if the key is not present
+print(my_dict.get('height', 0))
+
+my_dict = {
+    'first_name': 'Piotr',
+    0: 3.14,
+    2.5: 'Two and a half',
+    (1, 2): 'Tuple',
+    # [10, 20]: 'List',  # TypeError: unhashable type: 'list'
+}
+print(my_dict)
+print(my_dict['first_name'])
+print(my_dict[0])
+print(my_dict[2.5])
+print(my_dict[(1, 2)])
+
+del my_dict['first_name']
+print(my_dict)
+
+print('-' * 30)
+
+my_dict = {
+    'first_name': 'Piotr',
+    'last_name': 'GG',
+    'shoe_number': 46,
+    'works_at_ALX': True,
+    'favourite_numbers': [10, 20, 30]
+}
+
+# by default, we iterate through keys
+for key in my_dict:
+    print(key, my_dict[key])
+
+print('-' * 30)
+
+"""
+Dictionaries are able to expose different ways
+of iterating through its elements.
+We have 3 special methods that will allow us to iterate through a dictionary in different ways:
+- .keys() - a default way of iterating through a dictionary
+- .values()
+- .items()
+"""
+
+for key in my_dict.keys():
+    print(key)
+
+print('-' * 3)
+
+for value in my_dict.values():
+    print(value)
+
+print('-' * 3)
+
+for key, value in my_dict.items():
+    print(key, value)
+
+print('-' * 30)
+
+print('first_name' in my_dict)
+print('address' in my_dict)
