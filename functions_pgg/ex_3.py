@@ -28,6 +28,18 @@ is prime, and we can return True.
 """
 
 
-def is_prime(number):
-    ...
+def is_prime(number: int) -> bool:
+    """
+    Checks if number is prime - greater than 1 and divisible only by 1 and itself.
 
+    :param number: Positive integer
+    :return:
+    """
+    if number <= 1:
+        return False
+
+    for i in range(2, number):
+        if number % i == 0:
+            return False
+
+    return True
