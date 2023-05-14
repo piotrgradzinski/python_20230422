@@ -18,3 +18,10 @@ returns
     "number": 10
 }
 """
+
+
+def split_document_number_to_parts(document_number):
+    ...
+
+
+print(split_document_number_to_parts("FV/BI/2023-1/10"))
