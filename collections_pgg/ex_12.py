@@ -15,3 +15,32 @@ Use range from 0 to 11 and divide the number by 10.
     'To be or not to be': 18
 }
 """
+
+a = [number / 10 for number in range(0, 11)]
+print(a)
+
+a = []
+for number in range(0, 11):
+    a.append(number / 10)
+print(a)
+
+
+b = {(number, number ** 2, number ** 3) for number in range(-10, 11)}
+print(b)
+
+b = set()
+for number in range(-10, 11):
+    tmp_tuple = (number, number ** 2, number ** 3)
+    b.add(tmp_tuple)
+    # b.add((number, number ** 2, number ** 3))
+print(b)
+
+
+strings = {'a', 'Amy', 'Tom', 'To be or not to be'}
+c = {string: len(string) for string in strings}
+print(c)
+
+c = dict()
+for string in strings:
+    c[string] = len(string)
+print(c)
