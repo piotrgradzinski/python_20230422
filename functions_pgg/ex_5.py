@@ -29,13 +29,13 @@ a <a<a<a>>>   -> 6
 
 How we can do that?
 1. Create a function with the following arguments:
-- string
+- text
 - start with default value '<'
 - end with default value '>'
 2. Define variables: occurrences and level - both initially set to 0
 3. Create a for loop where you iterate over all the characters with if condition inside:
 - if current character equals start sign, increase level by 1
 - elif current character equals end sign, decrease level by 1
-- elif level is greater than one add level value to occurrences variable (+=)
-4. Return occurrences
+- elif level is greater than zero add level value to occurrences variable (+=)
+4. Return occurrences variable
 """
