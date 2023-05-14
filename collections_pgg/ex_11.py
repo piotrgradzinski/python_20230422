@@ -18,6 +18,14 @@ Example:
 Write a program that will print all available parameters for all the products.
 To avoid duplicates use set.
 
+How we can do that?
+- "Speed:DDR4-3000,Type:288-pin DIMM,CAS:15,Module:8x8GB,Size:64GB"
+- split this string on ','
+- ["Speed:DDR4-3000", "Type:288-pin DIMM", "CAS:15", "Module:8x8GB", "Size:64GB"]
+- iterate through this list and
+- split "Speed:DDR4-3000" on ":", so we will get ["Speed", "DDR4-3000"]
+- then we need add "Speed" to our parameters set.
+
 How can we do that?
 - create an empty set in which we will store parameters names
 - iterate through all the products in the list
