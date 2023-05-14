@@ -26,7 +26,7 @@ def more_than(text: str, occurrences: int) -> set:
     :return:
     """
     text = text.lower()
-    characters_count = dict()
+    characters_count = dict()  # or {} - this expression creates an empty dictionary
     results = set()
 
     for character in text:
