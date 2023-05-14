@@ -1,7 +1,7 @@
 """
 Create the following data structures using comprehension expressions:
 - (a) a list containing floating point numbers from 0.0 to 1.0 with increments of 0.1
-Use range from 0 to 10 and divide the number by 10.
+Use range from 0 to 11 and divide the number by 10.
 [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
 
 - (b) a set of tuples containing 3 elements each - a given number, its square and its cube - in the range from -10 to 10
