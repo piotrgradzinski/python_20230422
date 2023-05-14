@@ -8,11 +8,13 @@ Characters between nested brackets are counted according to the nesting level.
 
 Example of use:
 
->>> count_chars('mary <had> a little lamb')
+count_chars('mary <had> a little lamb')
 3
->>> count_chars('mary [had [a]] little [lamb]', '[', ']')
+
+count_chars('mary [had [a]] little [lamb]', '[', ']')
 10
->>> count_chars('a<a<a<a>>>')
+
+count_chars('a<a<a<a>>>')
 6
 
 mary <had> a little lamb -> 3
@@ -39,3 +41,23 @@ How we can do that?
 - elif level is greater than zero add level value to occurrences variable (+=)
 4. Return occurrences variable
 """
+
+
+def count_chars(text: str, start: str = '<', end: str = '>'):
+    occurrences = 0
+    level = 0
+    for character in text:
+        if character == start:
+            level += 1
+        elif character == end:
+            level -= 1
+        elif level > 0:
+            occurrences += level
+
+    return occurrences
+
+
+def test_simple_check_count_chars():
+    assert count_chars('mary <had> a little lamb') == 3
+    assert count_chars('mary [had [a]] little [lamb]', '[', ']') == 10
+    assert count_chars('a<a<a<a>>>') == 6
