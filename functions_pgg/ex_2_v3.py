@@ -35,9 +35,9 @@ def split_document_number_to_parts(document_number: str) -> dict:
     :return: Dictionary with document_type, department, year, quarter, number keys.
     """
     if document_number.count('/') != 3:
-        # approach with returning a special value that indicates that something is wrong
-        return None
-
+        # approach with raising exception
+        raise ValueError('Document number must contain 4 parts in a format ex. FV/BI/2023-1/10')
+    
     segments = document_number.split('/')
 
     return {
@@ -49,12 +49,15 @@ def split_document_number_to_parts(document_number: str) -> dict:
     }
 
 
-# splitted_document_number = split_document_number_to_parts("FV/BI/2023-1/10")
-splitted_document_number = split_document_number_to_parts("asdqweasd")
-if splitted_document_number is None:
-    print('The number is wrong')
-else:
+try:
+    users_document_number = input('Provide document number: ')
+    splitted_document_number = split_document_number_to_parts(users_document_number)
     print(splitted_document_number)
 
     for name, value in splitted_document_number.items():
         print(name, value)
+except ValueError:
+    print('Hey, you have provided wrong document number. ')
+    print('It should be like this: FV/BI/2023-1/10')
+except KeyError:
+    print('Handling another exception')
