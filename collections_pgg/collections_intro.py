@@ -525,3 +525,91 @@ print(names_set)
 # set -> list conversion
 names = list(names_set)
 print(names)
+
+print('-' * 30)
+
+"""
+Comprehensions
+- are a shorthand way of creating lists, dictionaries and sets
+"""
+
+# Goal: have a list of numbers from 0 to 10
+numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+print(numbers)
+
+print('-' * 10)
+
+# with standard for-loop
+numbers = []
+for number in range(0, 11):
+    numbers.append(number)
+
+print(numbers)
+
+# with list comprehensions
+numbers = [number for number in range(0, 11)]
+print(numbers)
+
+print('-' * 10)
+
+# with standard for-loop
+numbers = []
+for number in range(0, 11):
+    numbers.append(number * 10)
+
+print(numbers)
+
+# with list comprehensions
+numbers = [number * 10 for number in range(0, 11)]
+print(numbers)
+
+print('-' * 10)
+
+# with standard for-loop
+numbers = []
+for number in range(0, 11):
+    numbers.append(123)
+
+print(numbers)
+
+# with list comprehensions
+numbers = [123 for number in range(0, 11)]
+print(numbers)
+
+numbers_set = set(numbers)  # list to set
+print(numbers_set)
+
+print('-' * 10)
+
+# Set comprehensions
+my_string = 'To be or not to be'
+
+# with a for-loop
+characters = set()
+for character in my_string:
+    characters.add(character)
+
+print(characters)
+
+# with a set comprehension
+characters = {character for character in my_string}
+print(characters)
+
+print('-' * 10)
+
+# Dict comprehensions
+my_string = 'To be or not to be'
+
+# with a for-loop
+occurrences = dict()
+for character in my_string:
+    #           key          value
+    occurrences[character] = my_string.count(character)
+
+print(occurrences)
+
+# with a dict comprehension
+#              key      : value
+occurrences = {character: my_string.count(character) for character in my_string}
+print(occurrences)
