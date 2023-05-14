@@ -64,7 +64,18 @@ def test_is_prime_basic_test():
     # Then - we need to say what we are expecting
     # by using assert keyword
     # https://en.wikipedia.org/wiki/Assertion_(software_development)
-    # Assertion (assert keywaord in Python) is a statement that enabled us to test
+    # Assertion (assert keyword in Python) is a statement that enabled us to test
     # the assumptions we've made.
     assert result is True
 
+
+def test_is_prime():
+    numbers = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
+    for number in numbers:
+        assert is_prime(number) is True
+
+
+def test_is_not_prime():
+    numbers = [-100, -10, -9, -1, 0, 1, 4, 9, 15, 30, 50, 100]
+    for number in numbers:
+        assert is_prime(number) is False
