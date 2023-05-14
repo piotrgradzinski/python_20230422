@@ -21,7 +21,16 @@ returns
 
 
 def split_document_number_to_parts(document_number):
-    ...
+    segments = document_number.split('/')
+
+    return {
+        'document_type': segments[0],
+        'department': segments[1],
+        'year': int(segments[2].split('-')[0]),
+        'quarter': int(segments[2].split('-')[1]),
+        'number': int(segments[3])
+    }
 
 
-print(split_document_number_to_parts("FV/BI/2023-1/10"))
+splitted_document_number = split_document_number_to_parts("FV/BI/2023-1/10")
+print(splitted_document_number)
