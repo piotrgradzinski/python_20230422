@@ -16,3 +16,38 @@ empty string
 non-empty string
 a string with small/big letters
 """
+
+
+def more_than(text: str, occurrences: int) -> set:
+    """
+    Returns a set of characters that appear in text more than certain number of times.
+    :param text:
+    :param occurrences: At least how many times a character should appear in the text to be returned in the set.
+    :return:
+    """
+    text = text.lower()
+    characters_count = dict()
+    results = set()
+
+    for character in text:
+        if character not in characters_count:
+            characters_count[character] = 0
+        characters_count[character] += 1
+
+    for character, character_occurrences in characters_count.items():
+        if character_occurrences > occurrences:
+            results.add(character)
+
+    return results
+
+
+def test_empty_text():
+    assert more_than('', 0) == set()
+
+
+def test_non_empty_text():
+    assert more_than('aaaabbbccd', 2) == {'a', 'b'}
+
+
+def test_lower_capital_letters():
+    assert more_than('BBBBBbbbbbAAaaCcdD', 2) == {'a', 'b'}
