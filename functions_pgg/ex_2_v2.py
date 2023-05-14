@@ -19,8 +19,21 @@ returns
 }
 """
 
+"""
+Type hinting is a technique of marking what data type arguments should have
+and what data type will be returned from the function.
+"""
 
-def split_document_number_to_parts(document_number):
+
+def split_document_number_to_parts(document_number: str) -> dict:
+    """
+    Splitting document number string into a dictionary structure.
+    For example document number "FV/BI/2023-1/10" will be parsed into:
+    {"document_type": "FV", "department": "BI", "year": 2023, "quarter": 1, "number": 10 }.
+
+    :param document_number: For example "FV/BI/2023-1/10"
+    :return: Dictionary with document_type, department, year, quarter, number keys.
+    """
     segments = document_number.split('/')
 
     return {
