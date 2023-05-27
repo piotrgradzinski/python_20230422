@@ -30,3 +30,18 @@ Tests
 - no param provided
     'Hello $first_name' -> 'Hello $first_name'
 """
+
+
+def string_format(*args, **kwargs) -> str:
+    result = []
+
+    for base_string in args:
+        for param_name, param_value in kwargs.items():
+            base_string = base_string.replace(f'${param_name}', param_value)
+
+        result.append(base_string)
+
+    return '\n'.join(result)
+
+
+print(string_format('Hello $first_name $last_name', first_name='Piotr', last_name='GG'))
