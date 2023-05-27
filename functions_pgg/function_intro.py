@@ -281,7 +281,7 @@ def execute_operation(data: list, operation: Callable):
 
 print(execute_operation([1, 2, 3, 4, 5], lambda x: x * 10))  # [10, 20, 30, 40, 50]
 
-
+print('-' * 30)
 """
 map
 https://realpython.com/python-map-function/
@@ -290,3 +290,31 @@ https://realpython.com/python-map-function/
 numbers = [1, 2, 3, 4, 5]
 result = map(lambda number: number * 2, numbers)
 print(result)
+
+print(next(result))  # 2
+print(next(result))  # 4
+print(next(result))  # 6
+print(next(result))  # 8
+print(next(result))  # 10
+# print(next(result))  # StopIteration
+
+# we can't easily convert iterators (including map iterator) into collections we know very well.
+result = map(lambda number: number * 2, numbers)
+result = list(result)
+print(result)
+
+result = map(lambda number: number * 2, numbers)
+result = set(result)
+print(result)
+
+print('-' * 5)
+
+# we can use iterators in for loop
+for element in map(lambda number: number * 2, numbers):
+    print(element)
+
+print('-' * 5)
+
+# we can provide several collections to the map function
+map_iterator = map(lambda a, b: a / b, [100, 200, 300], [2, 4, 6])
+print(list(map_iterator))
