@@ -14,3 +14,11 @@ print(modules_pgg.my_module.__file__)  # full path to the file on disc
 import pytest
 print(pytest.__file__)
 
+"""
+Once we have modules, installed libraries (like pytest), 
+how python knows, where to look for modules?
+"""
+
+import sys
+
+print('\n'.join(sys.path))
