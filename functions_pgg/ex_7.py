@@ -37,11 +37,14 @@ def string_format(*args, **kwargs) -> str:
 
     for base_string in args:
         for param_name, param_value in kwargs.items():
-            base_string = base_string.replace(f'${param_name}', param_value)
+            base_string = base_string.replace(f'${param_name}', str(param_value))
 
         result.append(base_string)
 
     return '\n'.join(result)
 
 
-print(string_format('Hello $first_name $last_name', first_name='Piotr', last_name='GG'))
+print(string_format('Hello $first_name $last_name', 'Hi $first_name',
+                    first_name='Piotr', last_name='GG'))
+
+# HOMEWORK: prepare pytest test cases
