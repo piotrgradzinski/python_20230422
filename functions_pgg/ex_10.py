@@ -16,5 +16,20 @@ Plan
 
 
 def flatten(data: list) -> list:
-    ...
+    result = []
+
+    for element in data:
+        if isinstance(element, list):
+            result += flatten(element)
+        else:
+            result.append(element)
+
+    return result
+
+
+def test_flatten_v1():
+    assert flatten([]) == []
+    assert flatten([1, 2, 3]) == [1, 2, 3]
+    assert flatten([1, 2, 3, [4, 5, [6]], 7]) == [1, 2, 3, 4, 5, 6, 7]
+    assert flatten([1, 2, [3, [4, 5, [6, 7, [8, 9]]]]]) == [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
