@@ -33,14 +33,13 @@ Tests
 
 
 def string_format(*args, **kwargs) -> str:
-    result = []
+    result = []  # list
 
     for base_string in args:
         for param_name, param_value in kwargs.items():
             base_string = base_string.replace(f'${param_name}', str(param_value))
 
         result.append(base_string)
-
     return '\n'.join(result)
 
 
