@@ -20,3 +20,4 @@ bmis = map(lambda weight, height: weight / height ** 2, weights, heights_m)
 for bmi in bmis:
     print(round(bmi, 2))
 
+# filter bmis to get only those values which are in a "Normal range" - 18.5 – 24.9

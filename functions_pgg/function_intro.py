@@ -319,3 +319,24 @@ print('-' * 5)
 # we can provide several collections to the map function
 map_iterator = map(lambda a, b: a / b, [100, 200, 300], [2, 4, 6])
 print(list(map_iterator))
+
+print('-' * 30)
+
+# zip
+zip_iterator = zip([1, 2, 3], ['a', 'b', 'c'], (-0.5, 1.2, 10.0))
+print(list(zip_iterator))
+
+# filter
+# https://realpython.com/python-filter-function/
+
+my_numbers = [10, 0, -1, -5, 2.5, -123]
+
+print('-' * 30)
+
+# only positive numbers
+filter_iterator = filter(lambda number: number > 0, my_numbers)
+print(list(filter_iterator))
+
+# only negative numbers
+filter_iterator = filter(lambda number: number < 0, my_numbers)
+print(list(filter_iterator))
