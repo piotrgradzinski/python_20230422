@@ -37,7 +37,13 @@ import pytest
 
 
 def factorial(n: int) -> int:
-    ...
+    if n < 0:
+        raise ValueError('n must be non-negative integer')
+
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
 
 
 def test_5():
