@@ -21,7 +21,6 @@ At the level of the directory where the mathematica package is located, create t
 usage_of_mathematica and, using the various import methods, run the functions:
 square_area, triangle_area, multiply.
 """
-
 from modules_pgg.mathematica.algebra.formulas import add
 from modules_pgg.mathematica.geometry.figures import square_area
 
