@@ -236,3 +236,57 @@ my_list = [1, 2, 3]
 print(isinstance(my_list, list))  # True
 print(isinstance(my_list, int))  # False
 print(isinstance(my_list, str))  # False
+
+print('-' * 30)
+
+"""
+Lambda functions
+Function expression used as data. 
+https://realpython.com/python-lambda/
+"""
+
+
+def square(number):
+    return number ** 2
+
+
+print(square(3))
+
+# lets define similar function but using lambda functions
+square = lambda number: number ** 2
+print(square(3))
+
+
+def addition(a, b, c):
+    return a + b + c
+
+
+print(addition(20, 30, 40))
+
+addition = lambda a, b, c: a + b + c
+print(addition(20, 30, 40))
+
+
+from typing import Callable
+def execute_operation(data: list, operation: Callable):
+    result = []
+
+    for element in data:
+        result.append(operation(element))
+        # operation = lambda x: x * 10
+        # result.append( operation(element) )
+
+    return result
+
+
+print(execute_operation([1, 2, 3, 4, 5], lambda x: x * 10))  # [10, 20, 30, 40, 50]
+
+
+"""
+map
+https://realpython.com/python-map-function/
+"""
+
+numbers = [1, 2, 3, 4, 5]
+result = map(lambda number: number * 2, numbers)
+print(result)
