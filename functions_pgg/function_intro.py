@@ -303,6 +303,7 @@ result = map(lambda number: number * 2, numbers)
 result = list(result)
 print(result)
 
+# I'm creating map object again and again because once all elements are consumed from the iterator it becomes empty and we have to recreate it
 result = map(lambda number: number * 2, numbers)
 result = set(result)
 print(result)
