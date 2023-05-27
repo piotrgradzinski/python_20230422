@@ -16,8 +16,17 @@ heights_m = map(lambda height: height / 100, heights)
 
 # calculate BMIs
 bmis = map(lambda weight, height: weight / height ** 2, weights, heights_m)
+bmis = list(bmis)  # to avoid empty iterator in the filter part
 
 for bmi in bmis:
     print(round(bmi, 2))
 
 # filter bmis to get only those values which are in a "Normal range" - 18.5 – 24.9
+normal_range = filter(lambda bmi: 18.5 < bmi < 24.9, bmis)
+normal_range = list(normal_range)
+normal_range.sort()
+
+print('Normal range')
+for bmi in normal_range:
+    print(round(bmi, 2))
+
