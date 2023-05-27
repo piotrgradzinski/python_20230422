@@ -211,3 +211,28 @@ def counter(*args, **kwargs):
 counter(1, 2, 3, 'Tom', 3.14)
 counter(1, 2, 3, first_name='Piotr', last_name='GG')
 counter(title='Book', id=123)
+
+
+print('-' * 30)
+
+my_list = [1, 2, 3]
+
+print(my_list)
+my_list.append(4)
+print(my_list)
+
+my_list.append([5, 6, 7])
+print(my_list)
+
+my_list.extend([8, 9, 10])
+print(my_list)
+
+my_list += [11, 12, 13]
+print(my_list)
+
+print('-' * 30)
+
+my_list = [1, 2, 3]
+print(isinstance(my_list, list))  # True
+print(isinstance(my_list, int))  # False
+print(isinstance(my_list, str))  # False
