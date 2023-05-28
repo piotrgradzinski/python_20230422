@@ -34,19 +34,32 @@ class Basket:
         self._items = dict()  # object of class Product as a key, quantity as a value
 
     def add_product(self, product: Product, quantity: int):
-        ...
+        if product not in self._items:
+            self._items[product] = quantity
+        else:
+            self._items[product] += quantity
 
     def count_total_price(self) -> float:
-        ...
+        total_price = 0.0
+        for product, quantity in self._items.items():
+            total_price += product.price * quantity
+        return total_price
 
     def generate_receipt(self) -> str:
-        ...
+        receipt = ['Products']
+        for product, quantity in self._items.items():
+            receipt.append(f'- {product.name}, {product.price} x {quantity}')
+        receipt.append(f'Total: {self.count_total_price()}')
+        return '\n'.join(receipt)
 
     def count_products(self) -> int:
-        ...
+        return len(self._items)
 
     def is_empty(self) -> bool:
-        ...
+        if len(self._items) > 0:
+            return False
+        else:
+            return True
 
 
 water = Product(1, 'Water', 10.00)
@@ -59,4 +72,4 @@ basket.count_total_price()  # 60.00
 receipt = basket.generate_receipt()
 print(receipt)
 basket.count_products()  # 2
-basket.is_empty()  # False
+print(basket.is_empty())  # False
