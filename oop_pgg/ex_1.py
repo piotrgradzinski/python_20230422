@@ -27,6 +27,10 @@ class Product:
     def get_into(self) -> str:
         return f'Product "{self.name}", id: {self.product_id}, price: {self.price} PLN'
 
+    def __str__(self):
+        return self.get_into()
+
 
 water = Product(1, 'Water', 10.99)
 water.print_info()
+print(water)

@@ -11,8 +11,12 @@ class Person:
     def say_hello(self):
         print(f'Hello! My name is {self.first_name} {self.last_name}!')
 
+    def __str__(self) -> str:
+        return f"{self.first_name} {self.last_name}"
+
 
 person_piotr = Person('Piotr', 'GG')
+print(str(person_piotr))
 print(person_piotr)
 print(person_piotr.first_name)
 print(person_piotr.last_name)
@@ -26,6 +30,7 @@ person_john.say_hello()
 
 person_mary = Person()
 person_mary.last_name = 'Doe'
+print(person_mary)
 print(person_mary.first_name)
 print(person_mary.last_name)
 person_mary.say_hello()
