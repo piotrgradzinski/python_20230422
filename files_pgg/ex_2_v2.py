@@ -22,8 +22,11 @@ from collections import defaultdict
 total_time = defaultdict(int)
 with open('logs_simple.txt', 'r', encoding='utf-8') as file_handle:
     for line in file_handle:
-        user_name, time_spent = line.split(';')
-        total_time[user_name] += int(time_spent)
+        try:
+            user_name, time_spent = line.split(';')
+            total_time[user_name] += int(time_spent)
+        except ValueError:
+            continue
 
 print('Time spent in the system')
 for user_name, time_spent in total_time.items():
