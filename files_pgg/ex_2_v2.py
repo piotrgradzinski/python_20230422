@@ -28,3 +28,23 @@ with open('logs_simple.txt', 'r', encoding='utf-8') as file_handle:
 print('Time spent in the system')
 for user_name, time_spent in total_time.items():
     print(f'{user_name}: {time_spent} s')
+
+print('-' * 30)
+
+"""
+Improvement - having the list sorted. 
+Sorting dictionaries is a bit cumbersome... 
+"""
+for user_name in sorted(total_time.keys()):
+    print(f'{user_name}: {total_time[user_name]} s')
+
+print('-' * 30)
+
+"""
+- open terminal 
+- execute: pip install natsort
+"""
+from natsort import natsorted
+
+for user_name in natsorted(total_time.keys()):
+    print(f'{user_name}: {total_time[user_name]} s')
