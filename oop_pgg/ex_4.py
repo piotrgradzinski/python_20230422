@@ -31,32 +31,38 @@ from ex_1 import Product
 
 class Basket:
     def __init__(self):
-        self._items = dict()  # object of class Product as a key, quantity as a value
+        self.__items = dict()  # object of class Product as a key, quantity as a value
 
     def add_product(self, product: Product, quantity: int):
-        if product not in self._items:
-            self._items[product] = quantity
+        if quantity <= 0:  # business decision whether quantity can be negative
+            raise ValueError('Quantity must be positive.')
+
+        if not isinstance(product, Product):
+            raise TypeError('You can only add Product to this basket.')
+
+        if product not in self.__items:
+            self.__items[product] = quantity
         else:
-            self._items[product] += quantity
+            self.__items[product] += quantity
 
     def count_total_price(self) -> float:
         total_price = 0.0
-        for product, quantity in self._items.items():
+        for product, quantity in self.__items.items():
             total_price += product.price * quantity
         return total_price
 
     def generate_receipt(self) -> str:
         receipt = ['Products']
-        for product, quantity in self._items.items():
+        for product, quantity in self.__items.items():
             receipt.append(f'- {product.name}, {product.price} x {quantity}')
         receipt.append(f'Total: {self.count_total_price()}')
         return '\n'.join(receipt)
 
     def count_products(self) -> int:
-        return len(self._items)
+        return len(self.__items)
 
     def is_empty(self) -> bool:
-        if len(self._items) > 0:
+        if len(self.__items) > 0:
             return False
         else:
             return True
@@ -75,3 +81,10 @@ receipt = basket.generate_receipt()
 print(receipt)
 print(basket.count_products())  # 2
 print(basket.is_empty())  # False
+
+# _items in Basket class
+# print(basket._items.keys())  # Access to a protected member _items of a class
+
+# __items in Basket class
+# print(basket.__items.keys())  # AttributeError: 'Basket' object has no attribute '__items'
+# print(basket._Basket__items.keys())  # it's possible but we shouldn't do that
