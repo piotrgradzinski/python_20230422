@@ -17,14 +17,12 @@ dictionary or defaultdict where the key would be user name/id and value time spe
 - add this information to the dictionary
 """
 
-total_time = dict()
+from collections import defaultdict
+
+total_time = defaultdict(int)
 with open('logs_simple.txt', 'r', encoding='utf-8') as file_handle:
     for line in file_handle:
         user_name, time_spent = line.split(';')
-
-        if user_name not in total_time:
-            total_time[user_name] = 0
-
         total_time[user_name] += int(time_spent)
 
 print('Time spent in the system')
