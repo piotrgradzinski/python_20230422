@@ -26,3 +26,37 @@ Total: 60.00
 basket.count_products()  # 2
 basket.is_empty()  # False
 """
+
+from ex_1 import Product
+
+class Basket:
+    def __init__(self):
+        self._items = dict()  # object of class Product as a key, quantity as a value
+
+    def add_product(self, product: Product, quantity: int):
+        ...
+
+    def count_total_price(self) -> float:
+        ...
+
+    def generate_receipt(self) -> str:
+        ...
+
+    def count_products(self) -> int:
+        ...
+
+    def is_empty(self) -> bool:
+        ...
+
+
+water = Product(1, 'Water', 10.00)
+ice_cream = Product(2, 'Ice cream', 5.00)
+
+basket = Basket()
+basket.add_product(water, 5)
+basket.add_product(ice_cream, 2)
+basket.count_total_price()  # 60.00
+receipt = basket.generate_receipt()
+print(receipt)
+basket.count_products()  # 2
+basket.is_empty()  # False
