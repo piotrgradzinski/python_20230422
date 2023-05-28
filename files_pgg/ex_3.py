@@ -12,3 +12,23 @@ for each email:
 - remove non-printable characters (.strip(), .replace() - to remove spaces)
 """
 
+emails = set()
+with open('emails.txt', 'r', encoding='utf-8') as file_handle:
+    for line in file_handle:
+        if line.count('@') != 1:  # check the number of @
+            continue
+
+        # clean the line - remove non-printable characters, make all letters lowercase
+        email_address = line.strip().replace(' ', '').lower()
+
+        emails.add(email_address)  # add to set
+
+# sort
+from natsort import natsorted
+sorted_emails = natsorted(emails)
+
+# write cleaned emails to a separate file
+with open('cleaned_emails.txt', 'w') as file_handle:
+    for email in sorted_emails:
+        file_handle.write(email)
+        file_handle.write('\n')
