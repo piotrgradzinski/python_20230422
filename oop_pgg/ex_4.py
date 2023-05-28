@@ -66,10 +66,12 @@ water = Product(1, 'Water', 10.00)
 ice_cream = Product(2, 'Ice cream', 5.00)
 
 basket = Basket()
+print(basket.is_empty())  # True
 basket.add_product(water, 5)
 basket.add_product(ice_cream, 2)
-basket.count_total_price()  # 60.00
+
+print(basket.count_total_price())  # 60.00
 receipt = basket.generate_receipt()
 print(receipt)
-basket.count_products()  # 2
+print(basket.count_products())  # 2
 print(basket.is_empty())  # False

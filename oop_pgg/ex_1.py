@@ -31,6 +31,7 @@ class Product:
         return self.get_into()
 
 
-water = Product(1, 'Water', 10.99)
-water.print_info()
-print(water)
+if __name__ == '__main__':
+    water = Product(1, 'Water', 10.99)
+    water.print_info()
+    print(water)
