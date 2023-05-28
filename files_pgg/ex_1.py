@@ -13,3 +13,29 @@ Sample output:
 7: Cras in urna tellus. Donec velit enim, finibus in mauris ornare, luctus tempor nunc.
 8: Sed sed arcu in nisl tempor porta.
 """
+
+with open('test.txt', 'r', encoding='utf-8') as file_handle:
+    # approach 1
+    line_number = 1
+    while True:
+        line = file_handle.readline()
+        if not line:
+            break
+        print(f"{line_number}: {line.rstrip()}")
+        line_number += 1
+
+    print('-' * 30)
+
+    # approach 2
+    file_handle.seek(0)  # rewind the pointer to the beginning of the file
+    line_number = 1
+    for line in file_handle:
+        print(f"{line_number}: {line.rstrip()}")
+        line_number += 1
+
+    print('-' * 30)
+
+    # approach 3
+    file_handle.seek(0)
+    for line_number, line in enumerate(file_handle, start=1):
+        print(f"{line_number}: {line.rstrip()}")
