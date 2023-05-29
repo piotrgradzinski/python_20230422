@@ -107,7 +107,7 @@ Downloadable file of the "Pan Tadeusz": https://students.alx.pl/~pgradzinski/kpy
 
 Let the program, for a given text file name and for a given word, count how many times that word occurs in the file.
 
-### Exercise 5.3 | Count all the words (trudne) (2 hours)
+### Exercise 5.3 | Count all the words (difficult) (2 hours)
 
 Basic functionality:
 Write a program that reads a text file and enumerates and prints out, without repetition, all the words occurring in the file, along with how many times the word occurs. For example, like this:
