@@ -21,4 +21,17 @@ How to do it?
     - perform the action: add or list
 - if the action was add we have to save the file to disc
 """
+import json
 
+try:
+    with open('employees.json', 'r', encoding='utf-8') as db_file:
+        employees = json.load(db_file)
+except FileNotFoundError:
+    employees = []
+
+action = input('What would you like to do? [a - add, l - list employees]: ')
+
+if action == 'a':
+    ...
+elif action == 'l':
+    ...
