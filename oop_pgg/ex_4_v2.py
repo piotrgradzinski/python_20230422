@@ -120,7 +120,8 @@ def test_adding_two_products_and_price_check():
 def test_adding_not_product():
     b = Basket()
     with pytest.raises(TypeError):
-        b.add_product('string, not a product', 2)
+        # b.add_product('string, not a product', 2)
+        b.add_product([], 2)
 
 
 def test_adding_negative_quantity_of_product():
