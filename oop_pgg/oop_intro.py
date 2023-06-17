@@ -75,3 +75,40 @@ print(n4)
 
 n5 = n1 + 10.5  # Number + float
 print(n5)
+
+print('-' * 30)
+
+"""
+Inheritance
+"""
+
+
+# http://yuml.me/preview/ae3a32a3
+class Person:
+    def __init__(self, first_name: str, last_name: str):
+        self.first_name = first_name
+        self.last_name = last_name
+
+    def say_hello(self):
+        print(f"Hello! My name is {self.first_name} {self.last_name}")
+
+    def __str__(self):
+        return f"Person<{self.first_name}, {self.last_name}>"
+
+class Student(Person):
+    def __init__(self, first_name, last_name, field, year):
+        super().__init__(first_name, last_name)  # calls __init__ method from parent object (from Person)
+        self.field = field
+        self.year = year
+
+    def __str__(self):
+        return f"Student<{self.first_name}, {self.last_name}, {self.field}, {self.year}>"
+
+
+john_doe = Person('John', 'Doe')
+print(john_doe)
+john_doe.say_hello()
+
+student_anna_doe = Student('Anna', 'Doe', 'security', 2)
+print(student_anna_doe)
+student_anna_doe.say_hello()
