@@ -1,0 +1,15 @@
+{
+    "year": 2020,
+    "students": [
+        {
+            "first_name": "John",
+            "last_name": "Doe"
+        },
+        {
+            "first_name": "Ann",
+            "last_name": "Kowalski"
+        }
+    ],
+    "available": true,
+    "is_connected": null
+}
