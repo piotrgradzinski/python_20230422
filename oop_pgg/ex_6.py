@@ -31,3 +31,26 @@ class Employee:
         return salary
 
 
+class PremiumEmployee(Employee):
+    def __init__(self, first_name: str, last_name: str, rate: float):
+        super().__init__(first_name, last_name, rate)
+        self.bonus = 0
+
+    def give_bonus(self, bonus: float):
+        self.bonus += bonus
+
+    def pay_salary(self) -> float:
+        salary = super().pay_salary()
+        salary += self.bonus
+        self.bonus = 0
+        return salary
+
+
+john_doe = Employee('John', 'Doe', 100)
+john_doe.register_time(5)
+print(john_doe.pay_salary())
+
+anna_doe = PremiumEmployee('Anna', 'Doe', 150)
+anna_doe.register_time(3)
+anna_doe.give_bonus(500)
+print(anna_doe.pay_salary())
