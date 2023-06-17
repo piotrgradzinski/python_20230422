@@ -21,11 +21,16 @@ How to do it?
     - invoke .add_product on newly created basket and add product
 """
 from collections import defaultdict
+from typing import List
 
 from oop_pgg.ex_1 import Product
 
 
 class Basket:
+    @classmethod
+    def with_products(cls, products: List[Product]):
+        ...
+
     def __init__(self):
         self.__items = defaultdict(int)
 
@@ -54,3 +59,10 @@ class Basket:
     @property
     def is_empty(self) -> bool:
         return not self.__items  # leveraging empty/non-empty dict to bool conversion
+
+
+prod_1 = Product(1, 'Water', 1.99)
+prod_2 = Product(2, 'Crisps', 5.99)
+
+basket = Basket.with_products([prod_1, prod_2])
+print(basket.count_products())
