@@ -29,7 +29,10 @@ from oop_pgg.ex_1 import Product
 class Basket:
     @classmethod
     def with_products(cls, products: List[Product]):
-        ...
+        basket = cls()
+        for product in products:
+            basket.add_product(product, 1)
+        return basket
 
     def __init__(self):
         self.__items = defaultdict(int)
@@ -65,4 +68,5 @@ prod_1 = Product(1, 'Water', 1.99)
 prod_2 = Product(2, 'Crisps', 5.99)
 
 basket = Basket.with_products([prod_1, prod_2])
+print(type(basket))
 print(basket.count_products())
