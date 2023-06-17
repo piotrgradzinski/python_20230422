@@ -112,3 +112,56 @@ john_doe.say_hello()
 student_anna_doe = Student('Anna', 'Doe', 'security', 2)
 print(student_anna_doe)
 student_anna_doe.say_hello()
+
+print('-' * 30)
+
+"""
+Static methods
+So far methods defined in a class accepted `self` as an argument
+and thanks to that we were able to execute methods on particular object, instances of the class.
+
+Within a class we can defined static method (using @staticmethod decorator). 
+This type of methods are a bit different and they don't accept self argument.
+They are consider to be tool methods.
+"""
+
+
+# 1 approach - without static methods
+def celsius_to_fahr(celc):
+    return celc * 1.8 + 32
+
+
+def fahr_to_celsius(fahr):
+    return (fahr - 32) / 1.8
+
+
+print(celsius_to_fahr(100))
+print(fahr_to_celsius(212))
+
+"""
+With the approach 1 we have some issues:
+- we have two separate functions that are not related in any way
+- they have nothing in common
+- it's hard to find any other functions related to temperature conversion
+
+We see that those functions are related to each other, because they convert the temperature
+but at the same time they don't share any data between each other. 
+
+To add some context we can group them together within a class and mark them as static methods.
+"""
+
+class TemperatureConverter:
+    @staticmethod
+    def celsius_to_fahr(celc):
+        return celc * 1.8 + 32
+
+    @staticmethod
+    def fahr_to_celsius(fahr):
+        return (fahr - 32) / 1.8
+
+
+print(TemperatureConverter.celsius_to_fahr(100))
+print(TemperatureConverter.fahr_to_celsius(212))
+
+
+
