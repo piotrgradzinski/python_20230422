@@ -127,8 +127,8 @@ They are consider to be tool methods.
 
 
 # 1 approach - without static methods
-def celsius_to_fahr(celc):
-    return celc * 1.8 + 32
+def celsius_to_fahr(cels):
+    return cels * 1.8 + 32
 
 
 def fahr_to_celsius(fahr):
@@ -152,8 +152,8 @@ To add some context we can group them together within a class and mark them as s
 
 class TemperatureConverter:
     @staticmethod
-    def celsius_to_fahr(celc):
-        return celc * 1.8 + 32
+    def celsius_to_fahr(cels):
+        return cels * 1.8 + 32
 
     @staticmethod
     def fahr_to_celsius(fahr):
@@ -163,5 +163,49 @@ class TemperatureConverter:
 print(TemperatureConverter.celsius_to_fahr(100))
 print(TemperatureConverter.fahr_to_celsius(212))
 
+print('-' * 30)
+
+"""
+Class attributes and class methods
+"""
 
 
+class Employee:
+    # class attributes
+    WORK_DAY = 8
+
+    rates = {
+        'office_employee': 50,
+        'manager_employee': 100,
+    }
+
+    # class methods
+    @classmethod
+    def office_employee(cls, first_name, last_name):
+        # cls -> class, within cls argument we will have access to the Employee class
+        return cls(first_name, last_name, cls.rates['office_employee'])
+
+    def __init__(self, first_name: str, last_name: str, rate: float):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.rate = rate
+        self.work_time = 0
+
+    def register_time(self, hours: int):
+        self.work_time += hours
+
+    def pay_salary(self) -> float:
+        salary = self.work_time * self.rate
+        self.work_time = 0
+        return salary
+
+
+# without class methods
+john_doe = Employee('John', 'Doe', Employee.rates['office_employee'])
+john_doe.register_time(10)
+print(john_doe.pay_salary())  # 500
+
+# with class methods
+john_doe = Employee.office_employee('John', 'Doe')
+john_doe.register_time(10)
+print(john_doe.pay_salary())  # 500
