@@ -28,6 +28,8 @@ basket.is_empty()  # False
 """
 from collections import defaultdict
 
+import pytest
+
 from ex_1 import Product
 
 
@@ -84,19 +86,41 @@ print(basket.is_empty)  # False
 # print(basket._Basket__items.keys())  # it's possible but we shouldn't do that
 
 def test_basket_is_empty_after_creation():
-    pass
+    b = Basket()
+    assert b.is_empty is True
 
-def test_basket_is_not_ampty_after_adding_product():
-    pass
+def test_basket_is_not_empty_after_adding_product():
+    b = Basket()
+    p1 = Product(1, 'Water', 5.0)
+    b.add_product(p1, 5)
+    assert b.count_products() == 1
+    assert b.is_empty is False
 
 def test_adding_product_two_times():
-    pass
+    b = Basket()
+    p1 = Product(1, 'Water', 5.0)
+    b.add_product(p1, 1)
+    b.add_product(p1, 2)
+    assert b.count_products() == 1
+    assert b.count_total_price() == 15
+
 
 def test_adding_two_product_and_price_check():
-    pass
+    b = Basket()
+    p1 = Product(1, 'Water', 5.0)
+    p2 = Product(2, 'Chocolate', 10.0)
+    b.add_product(p1, 10)
+    b.add_product(p2, 2)
+    assert b.count_total_price() == 70.0
+
 
 def test_adding_not_product():
-    pass
+    b = Basket()
+    with pytest.raises(TypeError):
+        b.add_product('string, not a product', 2)
 
 def test_adding_negative_quantity_of_product():
-    pass
+    b = Basket()
+    p1 = Product(1, 'Water', 5.0)
+    with pytest.raises(ValueError):
+        b.add_product(p1, -5)
