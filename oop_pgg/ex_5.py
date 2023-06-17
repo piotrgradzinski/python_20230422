@@ -62,8 +62,12 @@ class Vector:
 
 vector_1 = Vector(x=3, y=2)
 vector_2 = Vector(x=1, y=3)
+print(vector_1)
+print(vector_2)
+print()
 
 vector_3 = vector_1 + vector_2
+
 print(vector_3)
 
 vector_4 = vector_1 - vector_2
@@ -71,6 +75,9 @@ print(vector_4)
 
 vector_5 = vector_1 * 2
 print(vector_5)
+
+print(vector_1.length)
+print(vector_2.length)
 
 print(vector_1 == vector_2)
 
