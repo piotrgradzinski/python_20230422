@@ -31,9 +31,11 @@ class Element:
     def __str__(self):
         return f"{self._content}"
 
+
 class HeaderElement(Element):
     def __str__(self):
         return f"{self._content}\n{'=' * len(self._content)}"
+
 
 class LinkElement(Element):
     def __init__(self, content: str, url: str):
@@ -42,6 +44,7 @@ class LinkElement(Element):
 
     def __str__(self):
         return f"[{self._content}]({self._url})"
+
 
 class Document:
     def __init__(self):
@@ -59,6 +62,6 @@ class Document:
 
 document = Document()
 document.add_element(HeaderElement('Chapter 1'))
-document.add_element(LinkElement('www.alx.pl', 'https://www.alx.pl'))
+document.add_element(LinkElement('ALX page', 'https://www.alx.pl'))
 document.add_element(Element('To be or not to be'))
 document.render()
