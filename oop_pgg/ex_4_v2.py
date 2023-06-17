@@ -85,9 +85,11 @@ print(basket.is_empty)  # False
 # print(basket.__items.keys())  # AttributeError: 'Basket' object has no attribute '__items'
 # print(basket._Basket__items.keys())  # it's possible but we shouldn't do that
 
+
 def test_basket_is_empty_after_creation():
     b = Basket()
     assert b.is_empty is True
+
 
 def test_basket_is_not_empty_after_adding_product():
     b = Basket()
@@ -95,6 +97,7 @@ def test_basket_is_not_empty_after_adding_product():
     b.add_product(p1, 5)
     assert b.count_products() == 1
     assert b.is_empty is False
+
 
 def test_adding_product_two_times():
     b = Basket()
@@ -105,7 +108,7 @@ def test_adding_product_two_times():
     assert b.count_total_price() == 15
 
 
-def test_adding_two_product_and_price_check():
+def test_adding_two_products_and_price_check():
     b = Basket()
     p1 = Product(1, 'Water', 5.0)
     p2 = Product(2, 'Chocolate', 10.0)
@@ -118,6 +121,7 @@ def test_adding_not_product():
     b = Basket()
     with pytest.raises(TypeError):
         b.add_product('string, not a product', 2)
+
 
 def test_adding_negative_quantity_of_product():
     b = Basket()
