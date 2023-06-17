@@ -42,7 +42,7 @@ if action == 'a':
         'year_of_birth': year_of_birth,
         'salary': salary
     })
-    with open('employees.json', 'w') as db_file:
+    with open('employees.json', 'w', encoding='utf-8') as db_file:
         json.dump(employees, db_file)
 elif action == 'l':
     for emp_number, emp in enumerate(employees, start=1):
