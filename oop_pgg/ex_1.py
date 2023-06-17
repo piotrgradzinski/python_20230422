@@ -22,16 +22,36 @@ class Product:
         self.price = price
 
     def print_info(self):
-        print(self.get_into())
+        print(self.get_info())
 
-    def get_into(self) -> str:
+    def get_info(self) -> str:
         return f'Product "{self.name}", id: {self.product_id}, price: {self.price} PLN'
 
     def __str__(self):
-        return self.get_into()
+        # print('Executing __str__ method')
+        return self.get_info()
 
 
+print(__name__)
+# This if statement is safeguard mechanism to avoid code execution when importing this file into another file
+# __name__ is a special variable that "stores the name of the file"
+# if I'm executing ex_1.py __name__ == '__main__'
+# if I will import ex_1 within product_import_test, __name__ == 'ex_1'
 if __name__ == '__main__':
     water = Product(1, 'Water', 10.99)
     water.print_info()
     print(water)
+
+    info = water.get_info()
+    info = info.upper()
+    print(info)
+
+    # instead of writing those two lines
+    # I want to give the developer possibility to print it.
+    info = water.get_info()
+    print(info)
+
+    # __str__ method is executed by Python
+    # when we are trying to convert our object into string
+    converted = str(water)
+

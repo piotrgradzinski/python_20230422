@@ -29,6 +29,7 @@ basket.is_empty()  # False
 
 from ex_1 import Product
 
+
 class Basket:
     def __init__(self):
         self.__items = dict()  # object of class Product as a key, quantity as a value

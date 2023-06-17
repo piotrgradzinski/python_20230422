@@ -30,6 +30,7 @@ from collections import defaultdict
 
 from ex_1 import Product
 
+
 class Basket:
     def __init__(self):
         self.__items = defaultdict(int)
@@ -45,7 +46,6 @@ class Basket:
 
     def count_total_price(self) -> float:
         return sum([product.price * quantity for product, quantity in self.__items.items()])
-
 
     def generate_receipt(self) -> str:
         receipt = ['Products']
@@ -82,3 +82,21 @@ print(basket.is_empty)  # False
 # __items in Basket class
 # print(basket.__items.keys())  # AttributeError: 'Basket' object has no attribute '__items'
 # print(basket._Basket__items.keys())  # it's possible but we shouldn't do that
+
+def test_basket_is_empty_after_creation():
+    pass
+
+def test_basket_is_not_ampty_after_adding_product():
+    pass
+
+def test_adding_product_two_times():
+    pass
+
+def test_adding_two_product_and_price_check():
+    pass
+
+def test_adding_not_product():
+    pass
+
+def test_adding_negative_quantity_of_product():
+    pass
