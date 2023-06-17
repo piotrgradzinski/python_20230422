@@ -32,6 +32,18 @@ except FileNotFoundError:
 action = input('What would you like to do? [a - add, l - list employees]: ')
 
 if action == 'a':
-    ...
+    first_name = input('First name: ')
+    last_name = input('Last name: ')
+    year_of_birth = int(input('Year of birth: '))
+    salary = float(input('Salary: '))
+    employees.append({
+        'first_name': first_name,
+        'last_name': last_name,
+        'year_of_birth': year_of_birth,
+        'salary': salary
+    })
+    with open('employees.json', 'w') as db_file:
+        json.dump(employees, db_file)
 elif action == 'l':
-    ...
+    for emp_number, emp in enumerate(employees, start=1):
+        print(f"[{emp_number}] {emp['first_name']} {emp['last_name']}, year of birth: {emp['year_of_birth']}, salary: {emp['salary']:.2f}")
