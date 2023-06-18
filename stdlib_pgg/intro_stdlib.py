@@ -66,6 +66,20 @@ data = {
 
 import json
 
+"""
+Within json module we have:
+- dumps - will return a string in a JSON format
+- dump - will write the data in a JSON to a file
+- loads - converts JSON data into Python data from a string
+- load - converts JSON data into Python data from a file
+"""
+
 print(json.dumps(data, indent=4))  # indent - makes indentations, so JSON looks better and is more readable
 
 json.dump(data, open('data.json', 'w'), indent=4)
+
+data = json.loads('{"course": "Python"}')
+print(data)
+
+data = json.load(open('employees.json'))
+print(data)
