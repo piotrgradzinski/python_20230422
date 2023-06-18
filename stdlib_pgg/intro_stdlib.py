@@ -184,3 +184,17 @@ requests library
 https://pypi.org/project/requests/
 pip install requests
 """
+
+print('-' * 30)
+
+import requests
+
+# HTTP methods: get, post, put, patch, delete, etc.: https://www.restapitutorial.com/lessons/httpmethods.html
+response = requests.get('https://data.police.uk/api/forces')
+
+# .json() method will convert response text using json module into python data structures
+data = response.json()
+print(data)
+for force in data:
+    print(force['id'])
+
