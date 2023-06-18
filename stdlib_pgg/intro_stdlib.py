@@ -83,3 +83,28 @@ print(data)
 
 data = json.load(open('employees.json'))
 print(data)
+
+print('-' * 30)
+
+"""
+CSV - Comma-separated_values
+https://en.wikipedia.org/wiki/Comma-separated_values
+https://realpython.com/python-csv/
+"""
+
+import csv
+from pprint import pprint
+
+# reading
+with open('data.csv', encoding='utf-8') as file_handle:
+    data = csv.DictReader(file_handle, delimiter=';')
+    pprint(list(data))
+
+# writing
+with open('data2.csv', 'w', encoding='utf-8') as file_handle:
+    fields = ['first_name', 'last_name']
+    writer = csv.DictWriter(file_handle, fieldnames=fields, delimiter=';')
+
+    writer.writeheader()
+    writer.writerow({'first_name': 'Piotr', 'last_name': 'GG'})
+
