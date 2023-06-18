@@ -108,3 +108,16 @@ with open('data2.csv', 'w', encoding='utf-8') as file_handle:
     writer.writeheader()
     writer.writerow({'first_name': 'Piotr', 'last_name': 'GG'})
 
+print('-' * 30)
+
+"""
+Excel files
+https://pypi.org/project/openpyxl/
+https://openpyxl.readthedocs.io/en/stable/
+
+We have to install openpyxl library, in terminal 
+pip install openpyxl
+
+https://realpython.com/openpyxl-excel-spreadsheets-python/
+"""
+
