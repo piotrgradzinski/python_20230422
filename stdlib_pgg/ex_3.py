@@ -9,4 +9,15 @@ regexp: ^https?://(www\.)?([^/]+)/.*
 - add this match to domains set
 - display the results
 """
+import re
 
+with open('urls.txt', encoding='utf-8') as file_handle:
+    domains = set()
+    for line in file_handle:
+        address = line.strip().lower()
+        result = re.search(r"^https?://(www\.)?([^/]+)/.*", address)
+        domain = result.group(2)
+        domains.add(domain)
+
+    for domain in domains:
+        print(domain)
