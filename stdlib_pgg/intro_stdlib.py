@@ -120,4 +120,26 @@ pip install openpyxl
 
 https://realpython.com/openpyxl-excel-spreadsheets-python/
 """
+from openpyxl import load_workbook
+
+workbook = load_workbook('employees.xlsx')
+
+# select proper sheet
+worksheet = workbook['Arkusz1']
+
+salaries = []
+for row in worksheet.iter_rows(min_row=2):
+    # each row is a tuple of Cell objects
+    print(row[0].value, row[1].value, row[2].value)
+    salaries.append(row[2].value)
+
+print(salaries)
+
+salaries_sum = sum(salaries)
+salaries_average = salaries_sum / len(salaries)
+
+print(f"Salaries sum: {salaries_sum}")
+print(f"Salaries average: {salaries_average}")
+
+print('-' * 30)
 
