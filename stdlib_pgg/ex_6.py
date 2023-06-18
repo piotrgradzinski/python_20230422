@@ -9,5 +9,19 @@ has to be replaced with VAT ID of the company.
 
 For example:
 https://wl-api.mf.gov.pl/api/search/nip/5272642198?date=2023-06-18
-"""
 
+Documentation
+https://wl-api.mf.gov.pl/#nip?date
+"""
+import requests
+
+vat_id = input('Provide VAT ID (NIP): ')
+
+url = f"https://wl-api.mf.gov.pl/api/search/nip/{vat_id}?date=2023-06-18"
+
+response = requests.get(url).json()
+company_data = response['result']['subject']
+
+print(f"Company name: {company_data['name']}")
+print(f"VAT ID: {company_data['nip']}")
+print(f"Address: {company_data['workingAddress']}")
