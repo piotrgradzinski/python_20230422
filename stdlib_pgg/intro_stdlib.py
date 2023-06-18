@@ -198,3 +198,4 @@ print(data)
 for force in data:
     print(force['id'])
 
+print('-' * 30)

@@ -14,10 +14,12 @@ Documentation
 https://wl-api.mf.gov.pl/#nip?date
 """
 import requests
+import datetime
 
 vat_id = input('Provide VAT ID (NIP): ')
 
-url = f"https://wl-api.mf.gov.pl/api/search/nip/{vat_id}?date=2023-06-18"
+current_date = datetime.datetime.now().strftime("%Y-%m-%d")
+url = f"https://wl-api.mf.gov.pl/api/search/nip/{vat_id}?date={current_date}"
 
 response = requests.get(url).json()
 company_data = response['result']['subject']
@@ -25,3 +27,4 @@ company_data = response['result']['subject']
 print(f"Company name: {company_data['name']}")
 print(f"VAT ID: {company_data['nip']}")
 print(f"Address: {company_data['workingAddress']}")
+print(f"Status: {company_data['statusVat']}")
