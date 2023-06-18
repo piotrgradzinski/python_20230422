@@ -5,7 +5,7 @@ regexp: ^https?://(www\.)?([^/]+)/.*
 
 - create an empty set to store the domains
 - read the file
-- for each line apply regular expression, retrieve the domain name from 2 group
+- for each line apply regular expression (re.search), retrieve the domain name from 2 group
 - add this match to domains set
 - display the results
 """
