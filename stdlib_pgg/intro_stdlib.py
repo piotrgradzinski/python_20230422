@@ -143,3 +143,44 @@ print(f"Salaries average: {salaries_average}")
 
 print('-' * 30)
 
+"""
+API - Application Programming Interface
+
+https://realpython.com/api-integration-in-python/
+
+How we can communicate with other services / applications
+using HTTP protocol (pipe) and RestAPI (how we prepare the message).
+
+HTTP protocol
+HTTPS - a secure version of a HTTP protocol which uses asymmetric encryption
+
+URL
+https://alx.training/en/bootcamp-python-english/
+https - protocol
+alx.training - domain name
+/en/bootcamp-python-english/ - path
+
+To send and receive HTTP request / response we can use:
+- urllib - embedded in python
+- requests - pip install requests
+"""
+
+# urllib
+import urllib.request
+import json
+from pprint import pprint
+
+with urllib.request.urlopen('https://data.police.uk/api/forces') as response:
+    data = response.read()  # we are receiving a string
+    data = json.loads(data)
+    pprint(data)
+
+    for force in data:
+        print(force['name'])
+
+
+"""
+requests library
+https://pypi.org/project/requests/
+pip install requests
+"""
