@@ -11,3 +11,32 @@ with open('dates.txt', encoding='utf=8') as file_handle:
     print(results)
     for result in results:
         print(result)
+
+    print('-' * 30)
+
+    results = re.findall(r"(\d{4})-(\d{2})-(\d{2})", content)
+    print(results)
+
+    print('-' * 30)
+
+    results = re.findall(r"((\d{4})-(\d{2})-(\d{2}))", content)
+    print(results)
+
+    print('-' * 30)
+
+    for match in re.finditer(r"((\d{4})-(\d{2})-(\d{2}))", content):
+        print(match)
+        print(match.groups())
+        print(match.group(1), match.group(2))
+
+    print('-' * 30)
+
+    # .search will return first match
+    result = re.search(r"((\d{4})-(\d{2})-(\d{2}))", content)
+    print(result)
+
+    print('-' * 30)
+
+    # .match - Try to apply the pattern at the start of the string
+    result = re.match(r"((\d{4})-(\d{2})-(\d{2}))", content)
+    print(result)
